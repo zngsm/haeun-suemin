@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Envelope from '../views/Envelope.vue'
 import Finish from '../views/Finish.vue'
 import Loop from '../views/Loop.vue'
+import Name from '../views/Name.vue'
+import Dead from '../views/Dead.vue'
 
 Vue.use(VueRouter)
 
@@ -12,6 +14,16 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/name',
+    name: 'Name',
+    component: Name
+  },
+  {
+    path: '/dead',
+    name: 'Dead',
+    component: Dead
   },
   {
     path: '/video',

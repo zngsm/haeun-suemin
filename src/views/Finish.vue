@@ -44,6 +44,20 @@
         장 소 : 이마트 트레이더스
       </div>
     </div>
+    <div class="finish-footer">
+      <div>
+        내 기숙사를 확인하고 싶다면?
+      </div>
+      <div class="finish-footer-input">
+        <div>이름</div>
+        <div style="width: 50%">
+          <input type="text" v-model="name" />
+        </div>
+        <div>
+          <button @click="submit">입력</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -53,7 +67,35 @@
 export default {
   name: "Finish",
   components: {},
-  methods: {},
+  data() {
+    return {
+      name: null,
+      academy: null,
+    };
+  },
+  methods: {
+    submit() {
+      if (this.name == "이주영" || this.name == "장수민") {
+        this.academy = "ravenclaw";
+      } else if (this.name == "이하은" || this.name == "정연수") {
+        this.academy = "gryffin";
+      } else if (this.name == "정효림" || this.name == "임소희") {
+        this.academy = "huffle";
+      } else if (this.name == "유혜진" || this.name == "김지선") {
+        this.academy = "slytherin";
+      } else if (this.name) {
+        this.academy = "nothing";
+      }
+      if (this.academy && this.academy == "nothing") {
+        this.$router.push("/dead");
+      } else if (this.academy) {
+        this.$router.push({
+          path: "/name",
+          query: { name: this.name, academy: this.academy },
+        });
+      }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -117,9 +159,27 @@ export default {
   align-items: center;
   justify-content: space-evenly;
 }
+.finish-footer {
+  margin: 20px;
+  font-family: ELAND;
+  color: rgb(240, 152, 21);
+}
+.finish-footer-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 hr {
   background-color: var(--color-title);
   height: 2px;
   border: 0px;
+}
+button {
+  border-radius: 20%;
+  font-family: ELAND;
+  padding: 5px;
+}
+input {
+  width: 80%;
 }
 </style>

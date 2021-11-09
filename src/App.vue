@@ -29,6 +29,20 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "ELAND";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Nice_M.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Eulyoo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/Eulyoo1945-SemiBold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --color-title: rgb(240, 208, 26);
   --color-title-shadow: rgb(19, 32, 43);
